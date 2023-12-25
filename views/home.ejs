@@ -1,0 +1,65 @@
+<%- include('partials/header') %>
+
+
+<!-- title and introduction to the library -->
+<div class="container mt-4">
+    <h1 class="text-center">Welcome to the Enchanted Library!</h1>
+    <p class="text-center lead">Discover the magic within pages. Hope you have a spellbinding time!</p>
+</div>
+
+
+<div class="container mt-5">
+    <div class="row">
+      <% books.forEach(book => { %>
+        <div class="col-md-4 mb-3">
+          <div class="card" style="width: 18rem;">
+            <!-- here we use the  Open Library Covers API to display the book covers on each book entry -->
+            <img src="https://covers.openlibrary.org/b/isbn/<%= book.isbn %>-M.jpg" class="card-img-top" alt="Cover for <%= book.title %>" onerror="this.onerror=null; this.src='path/to/your/default-cover-image.jpg';">
+            <div class="card-body">
+              <h5 class="card-title"><%= book.title %></h5>
+              <p class="card-text">
+                Author: <%= book.author %><br>
+                Rating: <%= book.rating %>/10<br>
+                Added on: <%= new Date(book.date_added).toDateString() %>
+              </p>
+              <!-- we did the comments in the form of popover so they just pop out when you click on read comments button, this is the part that does that feature-->
+              <a tabindex="0" class="btn btn-primary popover-dismiss comments-btn" role="button" data-bs-toggle="popover" data-bs-trigger="focus" title="Comments" data-bs-content="<%= book.comments %>">Read Comments</a>
+            </div>
+          </div>
+        </div>
+        <!-- comments modal code  -->
+        <div class="modal fade" id="commentsModal<%= book.id %>" tabindex="-1" aria-labelledby="commentsModalLabel<%= book.id %>" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="commentsModalLabel<%= book.id %>">Comments for <%= book.title %></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <%= book.comments %>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+
+
+  <!-- this script is listening for the click away to close the comments popover -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var popoverTriggerList = [].slice.call(document.querySelectorAll('.popover-dismiss'));
+      var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl, {
+          trigger: 'focus'
+        });
+      });
+    });
+  </script>
+
+
+<%- include('partials/footer') %>

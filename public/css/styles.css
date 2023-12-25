@@ -1,0 +1,129 @@
+body {
+    background-image: url('/images/library.jpg'); /* replace with your background image filename */
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+    font-family: 'HarryPotter', sans-serif; /*harry potter themed font */
+}
+
+@font-face {
+    font-family: 'HarryPotter';
+    src: url('/fonts/harrypotter.ttf') format('truetype'); /* Adjust the path and format as needed */ 
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'HarryPotter', sans-serif;
+    font-size: 50px; /* adjust this value as needed if you want larger headings */
+}
+
+p {
+    font-family: sans-serif;
+    font-size: 25px; /* adjust this value as needed if you want the paragraph text bigger*/
+}
+
+.navbar-brand, .navbar-nav .nav-link {
+    font-size: 2rem; /* adjust this value to increase the font of the navbar buttons and links */
+}
+
+.navbar .btn.btn-primary.btn-lg {
+    margin-left: auto; 
+    font-size: 2rem;
+}
+
+.text-center {
+    color: antiquewhite;
+}
+
+.navbar {
+    background-color: antiquewhite !important;
+}
+
+.navbar-btn {
+    background-color: burlywood; 
+    border-color: burlywood; 
+}
+
+.navbar-nav .nav-link:hover {
+    color: burlywood; /* light brown color for hover state */
+    text-decoration: underline; /* this adds an underline effect on hover */
+}
+
+.about-container {
+    text-align: center !important;
+    justify-content: center !important;
+    color: antiquewhite;
+    max-width: 600px;
+    margin-bottom: 150px;
+}
+
+.about-title {
+    color: burlywood;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    background-color: antiquewhite;
+    color: brown;
+}
+
+.comments-btn {
+    background-color: brown; 
+    border-color: brown; 
+    font-size: 1.5rem;
+}
+
+.footer-text {
+    text-align: center;
+    color: antiquewhite;
+}
+
+
+.mb-3 {
+    max-width: 600px; 
+    margin: 0 auto; 
+    color: antiquewhite;
+}
+
+.btn-primary:hover {
+    background-color: gold; /*  golden color on hover for better visual clarity */
+    border-color: burlywood; /* border color */
+}
+
+.add-button {
+    text-align: center;
+    margin-bottom: 150px;
+}
+
+.add-button .btn-primary {
+    background-color: brown;
+    border-color: burlywood;
+    font-size: 1.5rem;
+}
+
+.popover-body {
+    background-color: antiquewhite!important; /* replace with the color you want */
+}
+
+.popover-header {
+    background-color: burlywood!important; /* important rule is used to override some styling rules */
+    font-size: 1.5rem;
+}
+
+.form-control {
+    background-color: antiquewhite;
+}
+
+.form-title {
+    margin-top: 20px;
+}
+
+.form-label {
+    font-size: 1.5rem;
+    color: burlywood;
+}

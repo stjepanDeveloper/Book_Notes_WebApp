@@ -1,0 +1,48 @@
+<%- include('partials/header') %>
+
+<form action="/add" method="POST">
+
+    <!-- Form fields for adding new books -->
+    
+    <div class="mb-3 form-title">
+      <label for="bookTitle" class="form-label">Title</label>
+      <input type="text" class="form-control" id="bookTitle" name="title" required>
+    </div>
+  
+    
+    <div class="mb-3">
+      <label for="bookAuthor" class="form-label">Author</label>
+      <input type="text" class="form-control" id="bookAuthor" name="author" required>
+    </div>
+  
+    
+    <div class="mb-3">
+      <label for="bookRating" class="form-label">Rating (1-10)</label>
+      <input type="number" class="form-control" id="bookRating" name="rating" min="1" max="10" required>
+    </div>
+
+    
+    <div class="mb-3">
+        <label for="isbn" class="form-label">ISBN</label>
+        <input type="text" class="form-control" id="isbn" name="isbn" required>
+    </div>
+  
+    
+    <div class="mb-3">
+      <label for="bookDateAdded" class="form-label">Date Added</label>
+      <input type="date" class="form-control" id="bookDateAdded" name="date_added" required>
+    </div>
+  
+    
+    <div class="mb-3">
+      <label for="bookComments" class="form-label">Comments</label>
+      <textarea class="form-control" id="bookComments" name="comments"></textarea>
+    </div>
+  
+    
+    <div class="add-button">
+        <button type="submit" class="btn btn-primary">Add Book</button>
+    </div>
+  </form>
+
+  <%- include('partials/footer') %>
